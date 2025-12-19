@@ -3,30 +3,38 @@
 <html lang="fr">
 <head>
 <!--affiché les accents et relié le CSS et HTML-->
-  <meta charset="UTF-8">
-  <title>Contact</title>
-  <link rel="stylesheet" href="Contact.css">
+<meta charset="UTF-8">
+<title>Contact</title>
+<link rel="stylesheet" href="Contact.css">
+<script src="Contact.js"></script>
 </head>
 <body>
+<div class="cursor-dot"></div>
+<div class="cursor-outline"></div>
 
-  <h1 class="contactez-moi">Contactez-moi</h1>
+<h1 class="contactez-moi">Contactez-moi</h1>
+<form class="form" action="https://formspree.io/f/mnngwjbo" method="POST">
+<!--Champ anti-bot/robot-->
+<input type="text" name="_gotcha" style="display:none">
+<!--Permettre d'écrire qqch dans le text-->
+<label class="label" for="name">Nom :</label>
+<input class="input" type="text" id="name" name="name" required>
+<label class="label" for="email">Adresse Email :</label>
+<input class="input" type="email" id="email" name="email" required>
+<label class="label" for="message">Message :</label>
+<textarea class="input" id="message" name="message" rows="6" required></textarea>
+<button class="button" type="submit">Envoyer</button>
+</form>
 
-  <form class="form" action="https://formspree.io/f/mnngwjbo" method="POST">
-    <!--Champ anti-bot/robot-->
-    <input type="text" name="_gotcha" style="display:none">
-    <!--Permettre d'écrire qqch dans le text-->
-  
-    <label class="label" for="name">Nom :</label>
-    <input class="input" type="text" id="name" name="name" required>
-
-    <label class="label" for="email">Adresse Email :</label>
-    <input class="input" type="email" id="email" name="email" required>
-
-    <label class="label" for="message">Message :</label>
-    <textarea class="input" id="message" name="message" rows="6" required></textarea>
-
-    <button class="button" type="submit">Envoyer</button>
-  </form>
-
+        <div class="social-buttons">
+            <a href="https://www.instagram.com/zinedinency/" target="_blank" class="social-btn">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram">
+                <span>Instagram</span>
+            </a>
+            <a href="https://github.com/Zinedineee" target="_blank" class="social-btn">
+                <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub">
+                <span>GitHub</span>
+            </a>
+     </div>
 </body>
 </html>
