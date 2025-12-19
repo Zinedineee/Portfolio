@@ -80,7 +80,7 @@ body::before {
   color: #a78bfa;
   font-size: 60px;
   font-family: 'Orbitron', sans-serif;
-  margin-top: 150px;
+  margin-top: 70px;
 }
 
 .form {
@@ -127,7 +127,7 @@ body::before {
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 12px;
     padding: 1rem 2rem;
-    cursor: none; /* Masque le curseur par défaut */
+    cursor: none;
     transition: all 0.3s ease;
     display: flex;
     align-items: center;
@@ -149,4 +149,60 @@ body::before {
 
 .social-btn:last-child img {
     filter: brightness(0) invert(1);
+}
+
+.button {
+  margin-top: 25px;
+  padding: 14px 40px;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 18px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #1b193b;
+  background: linear-gradient(135deg, #a78bfa, #7c5cff);
+  border: none;
+  border-radius: 8px;
+  cursor: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 20px rgba(167, 139, 250, 0.4);
+  width: 725px;
+}
+
+.button:hover {
+  background: linear-gradient(135deg, #b9a6ff, #8a6bff);
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 0 35px rgba(167, 139, 250, 0.7);
+}
+
+.button:active {
+  transform: translateY(0) scale(0.98);
+  box-shadow: 0 0 15px rgba(167, 139, 250, 0.5);
+}
+
+.btn-retour {
+  display: inline-block;
+  padding: 14px 40px;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 18px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-left: 30px;
+  margin-top: 30px;
+  text-decoration: none;
+  color: #1b193b;
+  background: linear-gradient(135deg, #a78bfa, #7c5cff);
+  border-radius: 8px;
+  box-shadow: 0 0 20px rgba(167, 139, 250, 0.4);
+  transition: all 0.3s ease;
+}
+
+.btn-retour:hover {
+  background: linear-gradient(135deg, #b9a6ff, #8a6bff);
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 0 35px rgba(167, 139, 250, 0.7);
+}
+
+.btn-retour:active {
+  transform: translateY(0) scale(0.98);
+  box-shadow: 0 0 15px rgba(167, 139, 250, 0.5);
 }
