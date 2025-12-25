@@ -80,3 +80,14 @@ function telechargerCV() {
     link.click();
     document.body.removeChild(link);
   }
+
+  // Scrall avc annimation //
+window.addEventListener('scroll', () => {
+    document.querySelectorAll('.section, .content-card').forEach(el => {
+        const rect = el.getBoundingClientRect();
+        if (rect.top < window.innerHeight - 100) {
+            el.style.opacity = '1';
+            el.style.transform = 'translateY(0)';
+        }
+    });
+});
