@@ -1,0 +1,56 @@
+.btn-retour {
+  display: inline-block;
+  padding: 14px 40px;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 18px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-left: 30px;
+  margin-top: 30px;
+  text-decoration: none;
+  color: #1b193b;
+  background: linear-gradient(135deg, #a78bfa, #7c5cff);
+  border-radius: 8px;
+  box-shadow: 0 0 20px rgba(167, 139, 250, 0.4);
+  transition: all 0.3s ease;
+}
+
+.btn-retour:hover {
+  background: linear-gradient(135deg, #b9a6ff, #8a6bff);
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 0 35px rgba(167, 139, 250, 0.7);
+}
+
+.btn-retour:active {
+  transform: translateY(0) scale(0.98);
+  box-shadow: 0 0 15px rgba(167, 139, 250, 0.5);
+}
+
+/*Curseur*/
+* {
+  cursor: auto !important;
+}
+a, button, .btn-retour {
+  cursor: pointer !important;
+}
+.cursor-dot, .cursor-outline {
+  display: none !important;
+  pointer-events: none !important;
+}
+
+@media screen and (max-width: 500px) {
+  .btn-retour {
+    font-size: 10px;
+    border-radius: 4px;
+    padding: 10px 18px;
+}}
+
+
+
+
+
+
+
+
+
+

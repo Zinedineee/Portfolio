@@ -228,10 +228,10 @@ body::before {
     to { opacity: 1; transform: translateY(0); }
 }
 .content-card {
-    background: rgba(255, 255, 255, 0.05);
+    background: rgba(186, 13, 255, 0.02);
     background: transparent 1;
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(2px);
+    border: 1px solid rgba(247, 115, 207, 0.2);
     border-radius: 20px;
     padding: 3rem;
     transition: all 0.4s ease;
@@ -275,6 +275,393 @@ body::before {
   left: 130%;
 }
 
+.presquare {
+    background: rgba(219, 160, 253, 0.02);
+    backdrop-filter: blur(1px);
+    border: 1px solid rgba(247, 109, 212, 0.1);
+    border-radius: 20px;
+    padding: 3rem;
+    transition: all 0.4s ease;
+}
+.presquare h2 {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+    color: #a78bfa;
+    text-align: center;
+    font-family: 'Orbitron', sans-serif;
+}
+.presentationp{
+    color: #e2dafc;
+    text-align: center;
+    font-family: 'Inconsolata', sans-serif;
+    font-size: 20px; 
+}
+
+#formation {
+    max-width: 1200px;
+    margin: 5rem auto;
+    padding: 0 2rem;
+    position: relative;
+}
+
+#formation h2 {
+    font-size: 3rem;
+    margin-bottom: 4rem;
+    color: #a78bfa;
+    text-align: center;
+    font-family: 'Orbitron', sans-serif;
+}
+
+/* Timeline container */
+.formation-timeline {
+    position: relative;
+    padding: 2rem 0;
+}
+
+/* Ligne centrale verticale */
+.formation-timeline::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: linear-gradient(180deg, 
+        transparent 0%, 
+        rgba(167, 139, 250, 0.5) 10%, 
+        rgba(167, 139, 250, 0.8) 50%, 
+        rgba(167, 139, 250, 0.5) 90%, 
+        transparent 100%);
+    transform: translateX(-50%);
+    box-shadow: 0 0 20px rgba(167, 139, 250, 0.6);
+}
+
+/* Animation de scan */
+.formation-timeline::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 0;
+    width: 20px;
+    height: 20px;
+    background: radial-gradient(circle, rgba(167, 139, 250, 1) 0%, transparent 70%);
+    transform: translateX(-50%);
+    border-radius: 50%;
+    animation: scan 4s ease-in-out infinite;
+    box-shadow: 0 0 30px rgba(167, 139, 250, 0.8);
+}
+
+@keyframes scan {
+    0%, 100% { top: 0; opacity: 0; }
+    10% { opacity: 1; }
+    90% { opacity: 1; }
+    100% { top: 100%; opacity: 0; }
+}
+
+/* Item de formation */
+.formation-item {
+    position: relative;
+    margin-bottom: 4rem;
+    display: flex;
+    align-items: center;
+}
+
+/* Alternance gauche/droite */
+.formation-item:nth-child(odd) {
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+.formation-item:nth-child(even) {
+    flex-direction: row-reverse;
+    justify-content: flex-start;
+}
+
+/* Point central (nœud) */
+.formation-node {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 20px;
+    height: 20px;
+    background: linear-gradient(135deg, #667eea, #a78bfa);
+    border: 3px solid rgba(0, 0, 0, 0.8);
+    border-radius: 50%;
+    z-index: 10;
+    box-shadow: 0 0 20px rgba(167, 139, 250, 0.8),
+                inset 0 0 10px rgba(255, 255, 255, 0.3);
+    transition: all 0.3s ease;
+}
+
+.formation-item:hover .formation-node {
+    transform: translateX(-50%) scale(1.3);
+    box-shadow: 0 0 40px rgba(167, 139, 250, 1),
+                inset 0 0 15px rgba(255, 255, 255, 0.5);
+}
+
+/* Ligne de connexion horizontale */
+.formation-connector {
+    position: absolute;
+    left: 50%;
+    width: 80px;
+    height: 2px;
+    background: linear-gradient(90deg, 
+        rgba(167, 139, 250, 0.8), 
+        rgba(167, 139, 250, 0.2));
+    z-index: 5;
+}
+
+.formation-item:nth-child(odd) .formation-connector {
+    transform: translateX(-100%);
+}
+
+.formation-item:nth-child(even) .formation-connector {
+    transform: scaleX(-1);
+}
+
+/* Carte de contenu */
+.formation-content {
+    width: calc(50% - 100px);
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(167, 139, 250, 0.2);
+    border-radius: 15px;
+    padding: 2rem;
+    position: relative;
+    transition: all 0.4s ease;
+    overflow: hidden;
+}
+
+.formation-item:nth-child(odd) .formation-content {
+    margin-left: 0;
+}
+
+.formation-item:nth-child(even) .formation-content {
+    margin-right: 0;
+}
+
+.formation-content:hover {
+    transform: translateY(-5px);
+    border-color: rgba(167, 139, 250, 0.6);
+    box-shadow: 0 10px 40px rgba(102, 126, 234, 0.3);
+    background: rgba(0, 0, 0, 0.4);
+}
+
+/* Effet de brillance */
+.formation-content::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -100%;
+    width: 50%;
+    height: 200%;
+    background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    transition: left 0.6s ease;
+}
+
+.formation-content:hover::before {
+    left: 200%;
+}
+
+/* Header avec année */
+.formation-year {
+    display: inline-block;
+    font-size: 0.85rem;
+    color: #667eea;
+    font-family: 'Inconsolata', sans-serif;
+    background: rgba(102, 126, 234, 0.1);
+    border: 1px solid rgba(102, 126, 234, 0.3);
+    padding: 0.4rem 1rem;
+    border-radius: 20px;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.formation-diplome {
+    display: inline-block;
+    font-size: 0.85rem;
+    color: #ffffff;
+    font-family: 'Inconsolata', sans-serif;
+    background: rgba(255, 234, 43, 0.25);
+    border: 1px solid rgba(225, 226, 158, 0.3);
+    padding: 0.4rem 1rem;
+    border-radius: 20px;
+    letter-spacing: 1px;
+}
+
+/* Titre du diplôme */
+.formation-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #fff;
+    font-family: 'Orbitron', sans-serif;
+    margin-bottom: 0.8rem;
+    line-height: 1.3;
+}
+
+/* Établissement */
+.formation-school {
+    font-size: 0.95rem;
+    color: #c4b5fd;
+    font-family: 'Inconsolata', sans-serif;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Description */
+.formation-description {
+    font-size: 0.9rem;
+    color: #e0e0e0;
+    font-family: 'Inconsolata', sans-serif;
+    line-height: 1.7;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Tags de compétences */
+.formation-skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin-top: 1.2rem;
+}
+
+.formation-skill {
+    font-size: 0.75rem;
+    color: #a78bfa;
+    font-family: 'Inconsolata', sans-serif;
+    background: rgba(167, 139, 250, 0.05);
+    border: 1px solid rgba(167, 139, 250, 0.3);
+    padding: 0.4rem 0.8rem;
+    border-radius: 6px;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+}
+
+.formation-skill:hover {
+    background: rgba(167, 139, 250, 0.15);
+    border-color: rgba(167, 139, 250, 0.6);
+    color: #c4b5fd;
+}
+
+/* Responsive */
+@media screen and (max-width: 968px) {
+    .formation-timeline::before {
+        left: 30px;
+    }
+    
+    .formation-timeline::after {
+        left: 30px;
+    }
+    
+    .formation-item,
+    .formation-item:nth-child(odd),
+    .formation-item:nth-child(even) {
+        flex-direction: row;
+        justify-content: flex-start;
+        padding-left: 80px;
+    }
+    
+    .formation-node {
+        left: 30px;
+    }
+    
+    .formation-connector {
+        left: 30px;
+        transform: none !important;
+    }
+    
+    .formation-content {
+        width: 100%;
+        margin: 0 !important;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    #formation h2 {
+        font-size: 2.5rem;
+    }
+    
+    .formation-content {
+        padding: 1.5rem;
+    }
+    
+    .formation-title {
+        font-size: 1.1rem;
+    }
+    
+    .formation-school {
+        font-size: 0.85rem;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    #formation {
+        padding: 0 1rem;
+    }
+    
+    #formation h2 {
+        font-size: 2rem;
+        margin-bottom: 3rem;
+    }
+    
+    .formation-item {
+        padding-left: 60px;
+        margin-bottom: 3rem;
+    }
+    
+    .formation-timeline::before {
+        left: 20px;
+    }
+    
+    .formation-timeline::after {
+        left: 20px;
+    }
+    
+    .formation-node {
+        left: 20px;
+        width: 16px;
+        height: 16px;
+    }
+    
+    .formation-connector {
+        left: 20px;
+        width: 40px;
+    }
+    
+    .formation-content {
+        padding: 1.2rem;
+    }
+    
+    .formation-year {
+        font-size: 0.6rem;
+        padding: 0.2rem 0.6rem;
+    }
+       .formation-diplome {
+        font-size: 0.6rem;
+        padding: 0.2rem 0.6rem;
+    }
+    .formation-title {
+        font-size: 1rem;
+    }
+    
+    .formation-school {
+        font-size: 0.8rem;
+    }
+    
+    .formation-description {
+        font-size: 0.85rem;
+    }
+    
+    .formation-skill {
+        font-size: 0.7rem;
+        padding: 0.3rem 0.6rem;
+    }
+    
+}
 .forsquare h2 {
     font-size: 3rem;
     margin-bottom: 2rem;
@@ -284,36 +671,76 @@ body::before {
 
 }
 .forsquare {
-    background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(3px);
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 20px;
     padding: 3rem;
     transition: all 0.4s ease;
 }
-.forsquare:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 50px rgba(102, 126, 234, 0.3);
-}
-.comsquare h2 {
-    font-size: 3rem;
+.comsquare h3 {
+    font-size: 2rem;
     margin-bottom: 2rem;
-    color: #a78bfa;
+    color: #ffffff;
     text-align: center;
     font-family: 'Orbitron', sans-serif;
 
 }
-.comsquare {
-    background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 20px;
-    padding: 3rem;
-    transition: all 0.4s ease;
+.comsquare h4 {
+    font-size: 1.3rem;
+    color: #ffffff;
+    text-align: center;
+    font-family: 'Orbitron', sans-serif;
+
 }
+.python {
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+}
+.competence-logo img {
+    transition: transform 0.3s ease;
+    justify-content: center;
+    align-items: center;
+    width: 95%;
+}
+.competences-container {
+    display: flex;
+    gap: 1.5rem; /* Réduit le gap */
+    justify-content: center;
+    flex-wrap: nowrap; /* Empêche le retour à la ligne */
+    margin-top: 3rem;
+}
+.comsquare {
+    width: 400px;
+    height: 550px;
+    background: rgba(0, 0, 0, 1);
+    backdrop-filter: blur(1px);
+    border: 1px solid rgba(255, 255, 255, 0.9);
+    padding: 3rem;
+    transition: all 0.8s ease;
+    position: relative;
+    overflow: hidden; 
+}
+        .comsquare::before {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: -75%;
+            width: 50%;
+            height: 200%;
+            background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.15), transparent);
+            transform: rotate(0deg);
+            transition: left 0.6s ease;
+            pointer-events: none;
+        }
+
+        .comsquare:hover::before {
+            left: 130%;
+        }
 .comsquare:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 50px rgba(102, 126, 234, 0.3);
+    transform: translateY(-15px);
+    box-shadow: 0 15px 50px rgba(102, 126, 234, 0.12);
 }
 .expsquare h2 {
     font-size: 3rem;
@@ -335,13 +762,6 @@ body::before {
     transform: translateY(-5px);
     box-shadow: 0 15px 50px rgba(102, 126, 234, 0.3);
 }
-.presentationp{
-
-    color: #a78bfa;
-    text-align: center;
-    font-family: 'Inconsolata', sans-serif;
-
-}
 .content-card p, .content-card h3 {
     font-size: 1.1rem;
     line-height: 1.8;
@@ -351,6 +771,7 @@ body::before {
     margin-top: 1.5rem;
     color: #c4b5fd;
 }
+
 /* Divider moderne */
 .divider {
     height: 2px;
@@ -368,7 +789,6 @@ body::before {
 }
 /* Scrall*/
 .section, .content-card {
-    opacity: 0;
     transform: translateY(50px);
     transition: all 0.5s ease;
 }
@@ -681,6 +1101,9 @@ body::before {
     font-size: 30px;
   }
   .forsquare h2 {
+    font-size: 30px;
+  }
+  .presquare h2 {
     font-size: 30px;
   }
 

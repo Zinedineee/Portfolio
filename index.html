@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+    <!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
@@ -9,15 +9,16 @@
     <script src="index.js"></script>
 </head>
 <body>
-      <div class="cursor-dot"></div>
+      <div class="cursor-dot"></div>    
         <div class="cursor-outline"></div>
     <!-- Navigation -->
     <nav>
         <div class="topnav">
             <a class="active" href="#home">Menu</a>
             <a href="#presentation">Présentation</a>
-            <a href="#formations">Formations</a>
-            <a href="#experience">Expérience professionnelle</a>
+            <a href="#formation">Formations</a>
+            <a href="#experience">Expériences professionnelle</a>
+            <a href="photo.html">Photos Exp. Pro.</a>
             <a href="/home/zinedine/Epitech/B-WEB-100-NCY-1-1-digitalresume-1/CV Zinedine.pdf" download=>CV</a>
             <a href="#projet">Projet</a>
             <a href="contact.html">Contact</a>
@@ -51,7 +52,7 @@
     <div class="divider"></div>
     <!-- Présentation -->
     <section id="presentation" class="section">
-        <div class="content-card">
+        <div class="presquare">
             <h2>Présentation</h2>
             <div class="presentationp"><p>
                 >Je m'appelle Zinedine Baïr, j'ai 18 ans !<br><br>
@@ -61,41 +62,129 @@
                 >Je suis actuellement à la recherche d'un stage en informatique au mois de Juin 2026.
             </p> 
             </div>
-        </div>
+           
     </section>
     <!--Formations-->
-    <section id="formations" class="section">
-        <div class="forsquare">
-            <h2>Formations</h2>
-            <h3>
-                • École primaire Elsa Triolet (2013-2018)<br>
-                • Collège Jean Lurçat (2018-2022)<br>
-                • Lycée Emmanuel Héré en Transition numérique et énergétique (2022)<br>
-                • Lycée Jean Prouvé en Chaudronnerie Industrielle (2022-2025)<br>
-                • Epitech bachelors promo 2028 (2025-...)
-            </h3>
-            <p style="text-align: center; margin-top: 2rem; font-size: 1.3rem; color: #a78bfa;">
-                <strong>Baccalauréat 2025 avec mention</strong>
-            </p>
-            <img class="diploma-img" src="https://via.placeholder.com/500x200/667eea/ffffff?text=Baccalauréat" alt="Diplôme">
+<section id="formation">
+    <h2>Formations</h2>
+    <div class="formation-timeline">
+        
+        <div class="formation-item">
+            <div class="formation-node"></div>
+            <div class="formation-connector"></div>
+            <div class="formation-content">
+                <span class="formation-year">2025 - 2028</span>
+                <h3 class="formation-title">Epitech</h3>
+                <p class="formation-school">École Supérieure d'Informatique</p>
+                <p class="formation-description">
+                    Bachelor à Epitech promotion 2028. Programation, Cybersecurité ...
+
+                </p>
+                <div class="formation-skills">
+                    <span class="formation-skill">Fullstack</span>
+                    <span class="formation-skill">Python</span>
+                    <span class="formation-skill">React</span>
+                    <span class="formation-skill">Travail en équipe</span>
+                </div>
+            </div>
         </div>
-    </section>
-    <!--Compétences-->
-    <section id="compétences" class="section">
+
+        <!-- Répéter pour chaque formation -->
+        
+            <div class="formation-item">
+            <div class="formation-node"></div>
+            <div class="formation-connector"></div>
+            <div class="formation-content">
+                <span class="formation-year">2022 - 2025</span> 
+                <span class="formation-diplome">Baccalauréat avec Mention</span>
+                <h3 class="formation-title">Jean Prouvé</h3>
+                <p class="formation-school">Lycée Professionnelle</p>
+                <p class="formation-description">
+                  Baccalauréat en Technicien en Chaudronnerie Industrielle.
+                </p>
+                <div class="formation-skills">
+                    <span class="formation-skill">Soudure</span>
+                    <span class="formation-skill">Découpe laser</span>
+                    <span class="formation-skill">Perçage</span>
+                    <span class="formation-skill">Fonderie</span>
+                </div>
+            </div>
+        </div>
+
+                <div class="formation-item">
+            <div class="formation-node"></div>
+            <div class="formation-connector"></div>
+            <div class="formation-content">
+                <span class="formation-year">2022 - 2022</span>
+                <h3 class="formation-title">Emmanuel Héré</h3>
+                <p class="formation-school">Lycée Professionnelle</p>
+                <p class="formation-description">
+                    Baccalauréat en Transition numérique et Energétique.
+                </p>
+                <div class="formation-skills">
+                    <span class="formation-skill">ELEC</span>
+                    <span class="formation-skill">TUYAUTERIE</span>
+                </div>
+            </div>
+        </div>
+
+                <div class="formation-item">
+            <div class="formation-node"></div>
+            <div class="formation-connector"></div>
+            <div class="formation-content">
+                <span class="formation-year">2018 - 2022</span>
+                <h3 class="formation-title">Jean Lurçat</h3>
+                <p class="formation-school">Collège Géreral</p>
+                <p class="formation-description">
+                  Collège général (6e -> 3e)
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+<section id="experience" class="section">
+    <h2>Compétences</h2>
+    
+    <div class="competences-container">
+        
+        <!-- Carte Python -->
         <div class="comsquare">
-            <h2>Compétences</h2>
-            <h3>
-                Lorem ipsum dolor,
-                sit amet consectetur adipisicing elit. 
-                Laborum id debitis neque quo! Corporis laborum laudantium unde cum deleniti porro repudiandae odio nobis odit cu
-                lpa, ullam cupiditate placeat possimus eligendi.
-            </h3>
-            <p style="text-align: center; margin-top: 2rem; font-size: 1.3rem; color: #a78bfa;">
-                <strong>Baccalauréat 2025 avec mention</strong>
-            </p>
-            <img class="diploma-img" src="https://via.placeholder.com/500x200/667eea/ffffff?text=Baccalauréat" alt="Diplôme">
+            <div class="python">
+               <img src="/home/zinedine/Desktop/Epitech/Portfolio/pythonportfolio.png" alt="Python">     
+            </div>
+            <h3>Python</h3>
+            <h4>
+                Utilisation des bases du langage de programmation Python et des structures de données. (Variables, conditions, boucles ...)
+            </h4>
         </div>
-    </section>
+
+        <!-- Carte HTML/CSS -->
+        <div class="comsquare">
+            <div class="competence-logo">
+               <img src="/home/zinedine/Desktop/Epitech/Portfolio/html2.png" alt="html">     
+            </div>
+            <h3>HTML/CSS</h3>
+            <h4>
+                Création de sites web responsive et modernes. Maîtrise des animations CSS et du design adaptatif.
+            </h4>
+        </div>
+
+        <!-- Carte JavaScript -->
+        <div class="comsquare">
+            <div class="competence-logo">
+               <img src="/home/zinedine/Desktop/Epitech/Portfolio/JAVASCRIPT.png" alt="JavaScript">     
+            </div>
+            <h3>JavaScript</h3>
+            <h4>
+                Développement d'applications web interactives.
+            </h4>
+        </div>
+
+    </div>
+</section>
+
+
     <!--Expérience-->
     <section id="experience" class="section">
         <h2>Expériences professionnelles</h2>
@@ -104,7 +193,7 @@
             <!-- Carte 2025 -->
             <div class="experience-card">
                 <div class="experience-header">
-                    <div class="experience-title">Tuyauterie et maintenances en arrêt</div>
+                    <div class="experience-title">Tuyauteries et maintenances</div>
                     <div class="experience-period">Juin 2025 - 3 semaines</div>
                 </div>
                 <div class="experience-body">
@@ -211,6 +300,7 @@
                         <div class="experience-tag">> COMPTABILITÉ</div>
                         <div class="experience-tag">> ADMINISTRATION</div>
                         <div class="experience-tag">> POINTAGES</div>
+                        </a>
                     </div>
                 </div>
             </div>
