@@ -2,7 +2,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     const cursorDot = document.querySelector('.cursor-dot');
     const cursorOutline = document.querySelector('.cursor-outline');
-
     let mouseX = 0;
     let mouseY = 0;
     let outlineX = 0;
@@ -12,7 +11,6 @@ document.addEventListener('DOMContentLoaded', () => {
     document.addEventListener('mousemove', (e) => {
         mouseX = e.clientX;
         mouseY = e.clientY;
-
         // Le point suit directement le curseur
         cursorDot.style.left = mouseX + 'px';
         cursorDot.style.top = mouseY + 'px';
@@ -24,18 +22,14 @@ document.addEventListener('DOMContentLoaded', () => {
         const speed = 0.15;
         outlineX += (mouseX - outlineX) * speed;
         outlineY += (mouseY - outlineY) * speed;
-
         cursorOutline.style.left = outlineX + 'px';
         cursorOutline.style.top = outlineY + 'px';
-
         requestAnimationFrame(animateOutline);
     }
-
     animateOutline();
 
     // Effet au survol des éléments cliquables
     const clickables = document.querySelectorAll('a, .card, button, .profile-img-container, .social-btn');
-    
     clickables.forEach(el => {
         el.addEventListener('mouseenter', () => {
             cursorDot.style.width = '6px';
@@ -44,7 +38,6 @@ document.addEventListener('DOMContentLoaded', () => {
             cursorOutline.style.height = '35px';
             cursorOutline.style.borderColor = 'rgba(167, 139, 250, 0.8)';
         });
-
         el.addEventListener('mouseleave', () => {
             cursorDot.style.width = '8px';
             cursorDot.style.height = '8px';
@@ -61,17 +54,31 @@ document.addEventListener('DOMContentLoaded', () => {
         cursorOutline.style.width = '11px';
         cursorOutline.style.height = '11px';
     });
-
     document.addEventListener('mouseup', () => {
         cursorDot.style.width = '8px';
         cursorDot.style.height = '8px';
         cursorOutline.style.width = '20px';
         cursorOutline.style.height = '20px';
     });
+
+    // ===== ANIMATIONS AU SCROLL =====
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, {
+        threshold: 0.2
+    });
+
+    // Observer tous les éléments à animer
+    document.querySelectorAll('.animate-on-scroll').forEach(el => {
+        observer.observe(el);
+    });
 });
 
-/*Télécharger le CV dans la topnav*/
-
+// Télécharger le CV dans la topnav
 function telechargerCV() {
     const link = document.createElement("a");
     link.href = "cv/CV_Zinedine.pdf";
@@ -79,15 +86,4 @@ function telechargerCV() {
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
-  }
-
-  // Scrall avc annimation //
-window.addEventListener('scroll', () => {
-    document.querySelectorAll('.section, .content-card').forEach(el => {
-        const rect = el.getBoundingClientRect();
-        if (rect.top < window.innerHeight - 100) {
-            el.style.opacity = '1';
-            el.style.transform = 'translateY(0)';
-        }
-    });
-});
+}
