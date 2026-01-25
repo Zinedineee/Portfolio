@@ -3,7 +3,7 @@ Mon porfolio intéractif, ma vitrine :
 -Etude
 -Expèrience Pro
 -CV
--Projet
+-Projets
 -Contact
 
 et bien plus encore ...
