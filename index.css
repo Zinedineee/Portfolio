@@ -711,6 +711,13 @@ body::before {
     flex-wrap: nowrap; /* Empêche le retour à la ligne */
     margin-top: 3rem;
 }
+#competences h2 {
+    font-size: 3rem;
+    margin-bottom: 4rem;
+    color: #a78bfa;
+    text-align: center;
+    font-family: 'Orbitron', sans-serif;
+}
 .comsquare {
     width: 400px;
     height: 550px;
@@ -739,7 +746,7 @@ body::before {
             left: 130%;
         }
 .comsquare:hover {
-    transform: translateY(-15px);
+    transform: translateY(-15px) scale(1.10);
     box-shadow: 0 15px 50px rgba(102, 126, 234, 0.12);
 }
 .expsquare h2 {
@@ -1091,6 +1098,10 @@ body::before {
                 font-size: 0.75rem;
                 padding: 0.4rem 0.8rem;
             }
+            .presentationp {
+                width: 100%;
+                font-size: 17px;
+            }
         }
 
         @media screen and (max-width: 500px) {
@@ -1160,4 +1171,19 @@ body::before {
   }
     .expsquare h2 {
     font-size: 25px;
-  }}
+  }
+    #competences h2 {
+        font-size: 30px;
+    }}
+
+@media screen and (max-width: 768px) {
+    .competences-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .comsquare {
+        width: 90%;
+        height: auto;
+    }
+}
