@@ -887,7 +887,7 @@ body::before {
 
         .experience-company {
             font-size: 1rem;
-            color: #c4b5fd;
+            color: #c4b5fd; 
             font-family: 'Inconsolata', sans-serif;
             margin-bottom: 1.5rem;
             text-transform: uppercase;
@@ -1161,15 +1161,9 @@ body::before {
     .expsquare h2 {
     font-size: 25px;
   }}
-
-  @media screen and (max-width: 768px) {
+ @media screen and (max-width: 768px) {
     .competences-container {
         flex-direction: column;
         align-items: center;
-        
-    }
-     .comsquare {
-        width: 90%;
-        height: auto;
     }
 }
